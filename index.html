@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Final Project</title>
+    <!-- Add Mapbox GL JS JavaScript file -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+    <!-- Add in the Mapbox GL JS CSS file -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Add styling info for the map -->
+    <style>
+    body {
+      background-color: #58A5DB;
+    }
+      #mapId {
+        height: 660px;
+        width: 100%;
+    }
+    </style>
+    <!-- Adding styling info for page layout by reading in a CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h1> Wes Anderson x Mapbox </h1>
+  <h2> Custom Mapbox basemaps inspired by Wes Anderson </h2>
+  <!-- Add multiple pages to web page-->
+  <!-- active class displays the grey box around current page-->
+  <div class="container">
+    <div class="center">
+      <ul>
+  	     <li><a class="active" href="index.html" target="_self">Fantastic Mr. Fox</a></li>
+       </ul>
+    </div>
+  </div>
+  <br>
+
+    <!-- Container for the map -->
+    <div id="mapId"></div>
+
+    <script>
+    // Set your Mapbox access token
+    mapboxgl.accessToken = "pk.eyJ1IjoicHJpc2NpbGxhYWhuIiwiYSI6ImNrZ2JlcDczNTAxNXUyc282NGFsN3JxbWcifQ.AeEv5eaed1uUkW1OkXJcAQ";
+
+    /* The map variable stores a new mapbox gl map.
+    * map's center set to [-122.467, 37.798] with zoom 13.
+    * Set the style URL to your custom style
+    * Update the style with your custom style's Style URL.
+    * See the Style URL'S reference for more info: https://docs.mapbox.com/help/glossary/style-url/
+    */
+    var map = new mapboxgl.Map({
+    center: [-122.467, 37.798],
+    zoom: 13,
+    style: "mapbox://styles/priscillaahn/cki3lt3ys6giv19nnr3iy5yxm",
+    container: "mapId"
+    });
+
+    </script>
+
+</body>
+
+</html>
