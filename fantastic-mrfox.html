@@ -9,7 +9,10 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
     <!-- Add Google Font file -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+
     <!-- Add styling info for the map -->
     <style>
     body {
@@ -19,11 +22,11 @@
       background-position: center;
       background-color: #934527;
     }
-      #mapId {
-        width: 600px;
-        height: 500px;
-        margin-left: auto;
-        margin-right: auto;
+    #mapId {
+      width: 600px;
+      height: 500px;
+      margin-left: auto;
+      margin-right: auto;
     }
     </style>
     <!-- Adding styling info for page layout by reading in a CSS file -->
@@ -37,10 +40,33 @@
       <li class="navList"><a href="index.html"><span id ="currentList">Home</span></a></li>
     </ul>
     <img width=100% src="img/fantastic_moodboard.png">
-    <!-- Container for the map -->
-    <div id="mapId"></div>
-    <img width=600px src="img/fantastic_badguys.png">
 
+    <!-- Container for the map -->
+    <div class="img-container">
+      <div id="mapId"></div>
+    </div>
+
+    <div class="img-container">
+      <input id="myInp" type="text" value="mapbox://styles/priscillaahn/cki3lt3ys6giv19nnr3iy5yxm">
+      <button id="btnCopy">Copy</button>
+
+      <p> Published in 1970, Fantastic Mr. Fox was inspired by a particular tree near Roald Dahl's house in Great Missenden, a village in Buckinghamshire, UK.
+      During the making of the film version of Fantastic Mr. Fox, Wes Anderson returned to the Great Missenden countryside, staying with Roald's widow
+      Felicity "Liccy" Dahl while he wrote the screenplay.</p>
+    </div>
+
+    <!-- Section 1 -->
+    <h1 style="color:#edd2a1"> Trailer </h1>
+    <iframe width=800px height=400px src="https://www.youtube.com/embed/1v6-T52zLO0" frameborder="0" allow= "picture-in-picture" allowfullscreen></iframe>
+
+    <!-- Section 2 -->
+    <h1 style="color:#edd2a1"> Color & Font </h1>
+    <img width=300px src="img/fantastic_color.png">
+    <img width=300px src="img/fantastic_font.png">
+
+    <!-- Section 3 -->
+    <h1 style="color:#edd2a1"> Icons </h1>
+    <img width=600px src="img/fantastic_icon.png">
 
     <script>
     // Set your Mapbox access token
@@ -110,12 +136,27 @@
 
       var donut_popup = new mapboxgl.Popup({ offset: [0, -15] })
       .setLngLat(donut_feature.geometry.coordinates)
-      .setHTML(`<h2>` + donut_feature.properties.Name)
+      .setHTML('<h2>' + donut_feature.properties.Name)
       .addTo(map);
     });
 
     </script>
+
   </div>
 </body>
+
+<script type="text/javascript">
+  const myInp = document.getElementById("myInp");
+  const btnCopy = document.getElementById("btnCopy");
+
+  btnCopy.onclick = function () {
+    // Step 1 - Select the text
+    myInp.select();
+
+    // Step 2 - Copying the text
+    document.execCommand("Copy");
+  }
+
+</script>
 
 </html>

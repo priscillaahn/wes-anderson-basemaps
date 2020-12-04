@@ -14,15 +14,16 @@ h2 {
   text-align: center;
   color: #FFCD06 ;
   font-family: 'Nunito Sans', sans-serif;
-  font-weight: 400;
-  font-size: 100%;
+  font-weight: 600;
+  font-size: 150%;
 }
 
 p {
   text-align: center;
-  color: white;
-  font-family: tahoma;
-  font-size: 80%;
+  color: #edd2a1;
+  font-family: 'Bree Serif', serif;
+  font-weight: 400;
+  font-size: 120%;
 }
 
 
@@ -62,8 +63,34 @@ p {
   padding-left: 20px;
   float: right;
   display: inline;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
 }
 .navList a{
   text-decoration: none;
-  color:black;
+  color:#E2B8A8;
+}
+
+/* Button */
+input {
+  background-color: #e3e0da;
+  color: #807e79;
+  border: none;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+button {
+  background-color: #FCC237;
+  border: none;
+  color: #934527;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
 }
