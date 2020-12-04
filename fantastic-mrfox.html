@@ -127,6 +127,8 @@
     container: "mapId"
     });
 
+    map.addControl(new mapboxgl.FullscreenControl());
+
     // apple
     map.on('click', function(e) {
       var apple = map.queryRenderedFeatures(e.point, {
