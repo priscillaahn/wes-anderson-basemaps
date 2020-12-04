@@ -12,11 +12,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet"
 
     <!-- Add styling info for the map -->
     <style>
     body {
-      background-image: url('https://raw.githubusercontent.com/priscillaahn/wes-anderson-basemaps/main/img/fantastic_background.png');
+      background-image: url('img/fantastic_background.png');
       /* background-size: cover; */
       background-size: 100%;
       background-position: center;
@@ -28,6 +30,29 @@
       margin-left: auto;
       margin-right: auto;
     }
+    /* back to top button */
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: #882C12;
+      color: #EC998F;
+      cursor: pointer;
+      padding: 5px 10px;
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      border-radius: 4px;
+    }
+
+    #myBtn:hover {
+      background-color: #555;
+    }
     </style>
     <!-- Adding styling info for page layout by reading in a CSS file -->
     <link rel="stylesheet" href="styles.css">
@@ -36,8 +61,8 @@
 <body>
   <div class="content">
     <ul class="topNav">
-      <li class="navList"><a href="about.html">About</a></li>
-      <li class="navList"><a href="index.html"><span id ="currentList">Home</span></a></li>
+      <li class="navList"><a href="about.html" target="_self">About</a></li>
+      <li class="navList"><a href="index.html" target="_self"><span id ="currentList">Home</span></a></li>
     </ul>
     <img width=100% src="img/fantastic_moodboard.png">
 
@@ -67,6 +92,15 @@
     <!-- Section 3 -->
     <h1 style="color:#edd2a1"> Icons </h1>
     <img width=600px src="img/fantastic_icon.png">
+    <br>
+    <br>
+    <footer>
+      <h1 style="font-family: 'Sacramento', cursive;">Fin.<h1>
+    </footer>
+
+    <!-- Back to top -->
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Back to Top</button>
+  </div>
 
     <script>
     // Set your Mapbox access token
@@ -156,7 +190,28 @@
     // Step 2 - Copying the text
     document.execCommand("Copy");
   }
+</script>
 
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
 </script>
 
 </html>
