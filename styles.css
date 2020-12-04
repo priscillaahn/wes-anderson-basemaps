@@ -63,13 +63,13 @@ p {
   padding-left: 20px;
   float: right;
   display: inline;
-  font-family: 'Nunito Sans', sans-serif;
-  font-weight: 600;
+  font-family: 'Bree Serif', serif;
+  font-weight: 400;
   font-size: 18px;
 }
 .navList a{
   text-decoration: none;
-  color:#E2B8A8;
+  color:#FFCD06;
 }
 
 /* Button */
@@ -93,4 +93,91 @@ button {
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 600;
   font-size: 16px;
+  border-radius: 4px;
+}
+
+/* Homepage */
+#lead {
+  position: relative;
+  height: 100vh;
+  min-height: 500px;
+  max-height: 1080px;
+  width: 100%;
+  background-size: cover;
+  /* padding: 15px; */
+  overflow: hidden;
+}
+
+#lead-content {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center
+}
+
+#lead-overlay {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background:rgba(33,125,187,0.8);
+  z-index:1
+}
+
+.btn-rounded-white {
+  display:inline-block;
+  color:#fff;
+  padding:15px 25px;
+  border:3px solid #fff;
+  border-radius:30px;
+  transition:.5s ease all;
+  font-family: 'Bree Serif', serif;
+  font-weight: 400;
+  font-size: 18px;
+  text-decoration:none;
+}
+
+.btn-rounded-white:hover {
+  color:#3498db;
+  background:#fff;
+  text-decoration:none;
+}
+
+#lead-down {
+  position:absolute;
+  left:0;
+  right:0;
+  width:100%;
+  text-align:center;
+  z-index:10;
+  bottom:15px;
+  color:#fff
+}
+
+#lead-down span {
+  cursor:pointer;
+  display:block;
+  margin:0 auto;
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  border:3px solid #a0cfee;
+  text-align:center
+}
+
+#lead-down i {
+  animation:pulsate 1.5s ease;
+  animation-iteration-count:infinite;
+  padding-top:5px
+}
+
+@keyframes pulsate {
+  0% {transform:scale(1, 1)}
+  50% {transform:scale(1.2, 1.2)}
+  100% {transform:scale(1, 1)}
 }
