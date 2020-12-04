@@ -3,16 +3,20 @@
 
 <head>
   <title>Final Project</title>
-    <!-- Add Google Font file -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+  <!-- Add Google Font file -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet"
+    <!-- Add stylesheet  -->
+    <script src="https://use.fontawesome.com/2538419d70.js"></script>
 
     <!-- Add styling info for the map -->
     <style>
     body {
-      background-image: url('https://raw.githubusercontent.com/priscillaahn/wes-anderson-basemaps/main/img/homepage.png');
+      background-image: url('img/wallpaper.png');
       /* background-size: cover; */
       background-size: 100%;
       background-position: center;
@@ -24,28 +28,36 @@
     }
 
     img:hover {
-        opacity: 0.7;
-        filter: alpha(opacity=70);
+      opacity: 0.6;
+      filter: alpha(opacity=60);
     }
+
     </style>
     <!-- Adding styling info for page layout by reading in a CSS file -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <div class="content">
-    <ul class="topNav">
-      <li class="navList"><a href="about.html" target="_self">About</a></li>
-      <li class="navList"><a class="active" href="index.html" target="_self">Home</a></li>
-    </ul>
+  <div id="lead">
+      <div id="lead-content">
+          <h1>Wes Anderson + MapBox</h1>
+          <h2>Custom basemaps inspired by Wes Anderson films.</h2>
+          <a href="about.html" target="_self" class="btn-rounded-white">About</a>
+      </div>
+      <!-- End #lead-content -->
+      <div id="lead-overlay"></div>
+      <div id="lead-down">
+        <span>
+          <i class="fa fa-chevron-down" aria-hidden="true"></i>
+        </span>
+      </div>
+      <!-- End #lead-down -->
+  </div>
+  <!-- End #lead -->
 
-    <div class="img-container">
-      <h1 style="color:#edd2a1;"> Welcome !</h1>
-      <img width=300px src="img/handshake.png">
-      <p style="color:#edd2a1;" max-width=300px> Explore these custom Mapbox basemaps inspired by Wes Anderson films !</p>
-    </div>
     <!-- Add multiple pages to web page-->
     <!-- active class displays the grey box around current page-->
+    <br>
     <a href="fantastic-mrfox.html"><img class="img-container" src="img/fantastic_titlecard.jpg"></a>
     <img class="img-container" src="img/budapest_titlecard.png">
     <img class="img-container" src="img/isle_titlecard.jpg">
