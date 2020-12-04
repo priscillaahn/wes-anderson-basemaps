@@ -1,3 +1,4 @@
+// Copy text
 function copyText(htmlElement) {
   if (!htmlElement) {
     return;
