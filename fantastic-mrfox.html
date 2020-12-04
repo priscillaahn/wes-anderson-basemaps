@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Final Project</title>
+    <!-- Add Mapbox GL JS JavaScript file -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+    <!-- Add in the Mapbox GL JS CSS file -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Add Google Font file -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;900&display=swap" rel="stylesheet">
+    <!-- Add styling info for the map -->
+    <style>
+    body {
+      /* background-image: url('https://raw.githubusercontent.com/priscillaahn/wes-anderson-basemaps/main/img/fantastic_background.jpg'); */
+      background-color: #934527;
+    }
+      #mapId {
+        width: 600px;
+        height: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    </style>
+    <!-- Adding styling info for page layout by reading in a CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="content">
+    <ul class="topNav">
+      <li class="navList"><a href="about.html">About</a></li>
+      <li class="navList"><a href="index.html"><span id ="currentList">Home</span></a></li>
+    </ul>
+    <img width=100% src="img/fantastic_moodboard.png">
+    <!-- Container for the map -->
+    <div id="mapId"></div>
+    <img width=600px src="img/fantastic_badguys.png">
+
+
+    <script>
+    // Set your Mapbox access token
+    mapboxgl.accessToken = "pk.eyJ1IjoicHJpc2NpbGxhYWhuIiwiYSI6ImNrZ2JlcDczNTAxNXUyc282NGFsN3JxbWcifQ.AeEv5eaed1uUkW1OkXJcAQ";
+
+    /* The map variable stores a new mapbox gl map.
+    * map's center set to [-122.467, 37.798] with zoom 13.
+    * Set the style URL to your custom style
+    * Update the style with your custom style's Style URL.
+    * See the Style URL'S reference for more info: https://docs.mapbox.com/help/glossary/style-url/
+    */
+    var map = new mapboxgl.Map({
+    center: [-4.568700667650341, 54.547535283365505],
+    zoom: 4.5,
+    style: "mapbox://styles/priscillaahn/cki3lt3ys6giv19nnr3iy5yxm",
+    container: "mapId"
+    });
+
+    // apple
+    map.on('click', function(e) {
+      var apple = map.queryRenderedFeatures(e.point, {
+        layers: ['apple'] // replace this with the name of the layer
+      });
+
+      if (!apple.length) {
+        return;
+      }
+
+      var apple_feature = apple[0];
+
+      var apple_popup = new mapboxgl.Popup({ offset: [0, -15] })
+      .setLngLat(apple_feature.geometry.coordinates)
+      .setHTML(`<h2>` + apple_feature.properties.Name)
+      .addTo(map);
+    });
+
+
+    // chicken
+    map.on('click', function(e) {
+      var chicken = map.queryRenderedFeatures(e.point, {
+        layers: ['chicken'] // replace this with the name of the layer
+      });
+
+      if (!chicken.length) {
+        return;
+      }
+
+      var chicken_feature = chicken[0];
+
+      var chicken_popup = new mapboxgl.Popup({ offset: [0, -15] })
+      .setLngLat(chicken_feature.geometry.coordinates)
+      .setHTML(`<h2>` + chicken_feature.properties.Name)
+      .addTo(map);
+    });
+
+    // donut
+    map.on('click', function(e) {
+      var donut = map.queryRenderedFeatures(e.point, {
+        layers: ['donut'] // replace this with the name of the layer
+      });
+
+      if (!donut.length) {
+        return;
+      }
+
+      var donut_feature = donut[0];
+
+      var donut_popup = new mapboxgl.Popup({ offset: [0, -15] })
+      .setLngLat(donut_feature.geometry.coordinates)
+      .setHTML(`<h2>` + donut_feature.properties.Name)
+      .addTo(map);
+    });
+
+    </script>
+  </div>
+</body>
+
+</html>
